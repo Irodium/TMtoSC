@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication;
+
 import java.io.BufferedWriter;
 import javax.swing.JFileChooser;
 import java.io.File;
@@ -21,6 +21,7 @@ public class MainJFrame extends javax.swing.JFrame {
     public MainJFrame() {
         initComponents();
         jFileChooser1.setVisible(false);
+        selectedFile = new File("");
     }
 
     /**
@@ -91,6 +92,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = jFileChooser1.getSelectedFile();
+            selectedFile = file;
             //System.out.println(file.getPath());
            // try boolean res = file.createNewFile();
         }
@@ -138,5 +140,12 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
+    private File selectedFile;
+    
+    
+    public File getFile()
+    {
+    	return selectedFile;
+    }
 
 }
